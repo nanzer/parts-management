@@ -63,11 +63,17 @@ new Vue({
   router,
   render: h => h(App),
   created() {
-    const config = {
-      // your firebase config here
+    const firebaseConfig = {
+        apiKey: "AIzaSyBDzV4P9F41xw2WNPufOxH7VppLfdHFhCk",
+        authDomain: "part-number-database.firebaseapp.com",
+        databaseURL: "https://part-number-database.firebaseio.com",
+        projectId: "part-number-database",
+        storageBucket: "part-number-database.appspot.com",
+        messagingSenderId: "43859282854",
+        appId: "1:43859282854:web:6a21f7f4f79436b6405d67"
     };
 
-    firebase.initializeApp(config)
+    firebase.initializeApp(firebaseConfig)
 
     if (this.$store.state.user === null) {
       this.$router.push('/signin')

@@ -9,8 +9,12 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "@vue/cli": "^3.11.0",
     "date-fns": "^1.29.0",
-    "firebase": "^4.9.1",
+    "firebase": "^4.13.1",
+    "firebase-admin": "^8.6.0",
+    "grpc": "^1.24.0",
     "vue": "^2.5.3",
     "vue-router": "^3.0.1",
     "vuejs-dialog": "^0.4.7",
