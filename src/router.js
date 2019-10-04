@@ -29,7 +29,7 @@ const router = new Router({
     {
       path: '/',
       // redirect: '/login',
-      name: 'home',
+      name: 'login',
       component: Login,
     },
     // {

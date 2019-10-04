@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import firebase from 'firebase/app';
-import VueFire from 'vuefire';
+import { firestorePlugin } from 'vuefire';
 import App from './App.vue';
 import router from './router';
 import 'firebase/firestore';
+import vuetify from './plugins/vuetify';
 
-Vue.use(VueFire);
+Vue.use(firestorePlugin);
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBDzV4P9F41xw2WNPufOxH7VppLfdHFhCk',
@@ -24,5 +25,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app');

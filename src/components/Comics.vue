@@ -59,3 +59,30 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: black;
+}
+input, button {
+  margin-bottom: 10px;
+}
+button {
+  background-color: #0476F2;
+}
+.logout {
+  left: 50%;
+  top: 100%;
+}
+</style>

@@ -50,3 +50,30 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.login {
+  margin-top: 40px;
+}
+input {
+  align-self: center;
+  margin: 10px 0;
+  width: auto;
+  padding: 15px;
+}
+button {
+  margin: 10px 0;
+  background-color: #0476F2;
+}
+a {
+  color: black;
+  text-decoration: underline;
+}
+p {
+  margin-top: 40px;
+  font-size: 13px;
+}
+h1, h2 {
+  font-weight: normal;
+}
+</style>
