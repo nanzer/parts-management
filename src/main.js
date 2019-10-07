@@ -7,7 +7,7 @@ import 'firebase/firestore';
 import vuetify from './plugins/vuetify';
 import "vuetify/dist/vuetify.min.css";
 
-Vue.use(Vuetify);
+Vue.use(vuetify);
 
 Vue.use(firestorePlugin);
 
