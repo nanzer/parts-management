@@ -56,7 +56,7 @@
                     label="Login"
                     v-model="email"
                     name="login"
-                    prepend-icon="person"
+                    prepend-v-icon="person"
                     type="text"
                   ></v-text-field>
 
@@ -65,14 +65,14 @@
                     label="Password"
                     v-model="password"
                     name="password"
-                    prepend-icon="lock"
+                    prepend-v-icon="lock"
                     type="password"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
                 <div class="flex-grow-1"></div>
-                <v-btn color="primary" v-on:click="login">Login</v-btn>
+                <v-btn color="primary" v-on:click="login" v-on:keyup.enter="login">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -118,30 +118,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.login {
-  margin-top: 40px;
-}
-input {
-  align-self: center;
-  margin: 10px 0;
-  width: auto;
-  padding: 15px;
-}
-button {
-  margin: 10px 0;
-  background-color: #0476F2;
-}
-a {
-  color: black;
-  text-decoration: underline;
-}
-p {
-  margin-top: 40px;
-  font-size: 13px;
-}
-h1, h2 {
-  font-weight: normal;
-}
-</style>
