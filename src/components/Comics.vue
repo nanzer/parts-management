@@ -1,5 +1,6 @@
-<template>  
-  <v-navigation-drawer
+<template>
+  <v-app id="inspire">
+    <v-navigation-drawer
       v-model="drawer"
       :clipped="$vuetify.breakpoint.lgAndUp"
       app
@@ -86,7 +87,7 @@
         class="ml-0 pl-4"
       >
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-        <span class="hidden-sm-and-down">Parts Management</span>
+        <span class="hidden-sm-and-down">Google Contacts</span>
       </v-toolbar-title>
       <v-text-field
         flat
@@ -112,8 +113,8 @@
           item
         >
           <v-img
-            src="src/assets/logo.png"
-            alt="Logo"
+            src="https://cdn.vuetifyjs.com/images/logos/logo.svg"
+            alt="Vuetify"
           >
           </v-img></v-avatar>
       </v-btn>
@@ -248,20 +249,15 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  
+  </v-app>
 </template>
 
-
 <script>
-import firebase from 'firebase';
-import { db } from '../main';
-
- export default {
+  export default {
     props: {
       source: String,
     },
     data: () => ({
-      name: "Comics",
       dialog: false,
       drawer: null,
       items: [
