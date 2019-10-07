@@ -81,6 +81,13 @@ export default {
         this.registerWithFirebase()
       }
     },
+    registerWithFirebase () {
+      const user = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('signUpAction', user)
+    },
     reset () {
       this.$refs.form.reset()
     }

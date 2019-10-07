@@ -71,15 +71,11 @@ export default {
       this.$refs.form.reset()
     },
     loginWithFirebase () {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        .then((response) => {
-          alert('success')
-          console.log(response)
-        })
-        .catch((error) => {
-          alert('failure')
-          console.log(error)
-        })
+      const user = {
+        email: this.email,
+        password: this.password
+      }
+      this.$store.dispatch('loginAction', user)
     }
   }
 }
