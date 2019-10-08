@@ -36,7 +36,8 @@ export default new Vuex.Store({
       commit('setStatus', 'loading')
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((response) => {
-          alert('success')
+          // alert('Registration successfully completed.')
+          //^Alert requires dismissal by user. Cannot auto-dismiss.
           // response will have user
           // user will have uid will be updated to the state
           commit('setUser', response.user.uid)
@@ -50,7 +51,7 @@ export default new Vuex.Store({
     },
 
     loginAction ({ commit }, payload) {
-      firebase.auth().loginWithEmailAndPassword(payload.email, payload.password)
+      firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then((response) => {
           commit('setUser', response.user.uid)
           commit('setStatus', 'success')
@@ -64,6 +65,7 @@ export default new Vuex.Store({
 
     signOutAction ({ commit }) {
       firebase.auth().signOut()
+// eslint-disable-next-line
         .then((response) => {
           commit('setUser', null)
           commit('setStatus', 'success')

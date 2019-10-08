@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout row wrap>
+    <v-layout align-center row wrap>
       <v-flex>
         <v-form
           ref="form"
@@ -12,6 +12,7 @@
             :rules="emailRules"
             label="E-mail"
             required
+            v-on:keyup.enter="validate"
           ></v-text-field>
 
           <v-text-field
@@ -22,16 +23,18 @@
             :append-icon="passwordShow ? 'visibility' : 'visibility_off'"
             :type="passwordShow ? 'text' : 'password'"
              @click:append="passwordShow = !passwordShow"
+             v-on:keyup.enter="validate"
           ></v-text-field>
 
           <v-text-field
             v-model="confirmPassword"
-            label="confirm Password"
+            label="Confirm Password"
             :rules="passwordRules"
             required
             :append-icon="confirmPasswordShow ? 'visibility' : 'visibility_off'"
             :type="confirmPasswordShow ? 'text' : 'password'"
              @click:append="confirmPasswordShow = !confirmPasswordShow"
+             v-on:keyup.enter="validate"
           ></v-text-field>
 
           <v-btn
@@ -41,7 +44,7 @@
           >
             Register
           </v-btn>
-
+           
           <v-btn
             color="error"
             @click="reset"
@@ -56,8 +59,6 @@
 
 <script>
 
-import firebase from 'firebase'
-
 export default {
   data: () => ({
     passwordShow: false,
@@ -71,7 +72,8 @@ export default {
     password: '',
     confirmPassword: '',
     passwordRules: [
-      v => !!v || 'Password and Confirm password required'
+      v => !!v || 'Password and Confirm Password are required',
+      v => (v.length > 5) || 'Password must be at least 6 characters long'
     ]
   }),
   methods: {

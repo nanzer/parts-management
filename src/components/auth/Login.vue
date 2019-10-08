@@ -12,6 +12,7 @@
             :rules="emailRules"
             label="E-mail"
             required
+            v-on:keyup.enter="validate"
           ></v-text-field>
 
           <v-text-field
@@ -22,6 +23,7 @@
             :append-icon="passwordShow ? 'visibility' : 'visibility_off'"
             :type="passwordShow ? 'text' : 'password'"
              @click:append="passwordShow = !passwordShow"
+             v-on:keyup.enter="validate"
           ></v-text-field>
 
           <v-btn
@@ -31,7 +33,6 @@
           >
             Login
           </v-btn>
-
           <v-btn
             color="error"
             @click="reset"
@@ -45,7 +46,6 @@
 </template>
 
 <script>
-import firebase from 'firebase'
 export default {
   data: () => ({
     passwordShow: false,
