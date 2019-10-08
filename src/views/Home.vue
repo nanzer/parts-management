@@ -1,13 +1,17 @@
 <template>
-  <HelloWorld />
+  <v-container>
+    <v-banner
+      single-line
+      :sticky="sticky"
+    >
+      We can't save your edits while you are in offline mode.
+    </v-banner>
+  </v-container>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld';
-
 export default {
   components: {
-    HelloWorld,
   },
 };
 </script>

@@ -27,6 +27,7 @@
           ></v-text-field>
 
           <v-btn
+            text
             :disabled="!valid"
             color="success"
             @click="validate"
@@ -34,6 +35,7 @@
             Login
           </v-btn>
           <v-btn
+            text
             color="error"
             @click="reset"
           >
@@ -58,7 +60,8 @@ export default {
     password: '',
     passwordRules: [
       v => !!v || 'Password is Required'
-    ]
+    ],
+    status: '',
   }),
   methods: {
     validate () {
@@ -76,6 +79,10 @@ export default {
         password: this.password
       }
       this.$store.dispatch('loginAction', user)
+    },
+    checkStatus(){
+      this.status = this.$store.status(),
+      console.log("Status = "+this.status)
     }
   }
 }

@@ -11,13 +11,6 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.config.productionTip = false
 Vue.use(vuetify)
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
-
 var config = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
   authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
@@ -28,3 +21,13 @@ var config = {
   appId: process.env.VUE_APP_FIREBASE_APP_ID
 }
 firebase.initializeApp(config)
+
+//  es-lint-disable-next-line
+export const db = firebase.firestore();
+
+new Vue({
+  router,
+  store,
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')

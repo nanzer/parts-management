@@ -12,6 +12,14 @@ export default new Vuex.Store({
     error: null
 
   },
+  // computed: {
+  //   status() {
+  //     return this.$store.state.status
+  //   },
+  //   user() {
+  //     return this.$store.state.user
+  //   }
+  // },
   mutations: {
 
     setUser (state, payload) {
